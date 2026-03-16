@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Group 3</title>
+    <style>
+        :root {
+            --primary: #0078d4;
+            --dark: #24292e;
+            --light: #f6f8fa;
+        }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            background: var(--light); 
+            color: var(--dark); 
+            text-align: center;
+        }
+        .error-container { 
+            background: white; 
+            padding: 3rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            border-top: 5px solid #d83b01; /* Warning Red */
+        }
+        h1 { font-size: 3rem; margin: 0; color: #d83b01; }
+        p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { 
+            text-decoration: none; 
+            background: var(--primary); 
+            color: white; 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 4px; 
+            font-weight: bold;
+        }
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+<div class="error-container">
+    <h1>404</h1>
+    <h2>Resource Not Found</h2>
+    <p>The page you are looking for might have been moved or doesn't exist in our Blob Storage.</p>
+    <a href="index.html" class="btn">Return to Team Portfolio</a>
+</div>
+
+</body>
+</html>

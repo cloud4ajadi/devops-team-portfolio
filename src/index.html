@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 | DevOps Engineering Team</title>
+    <style>
+        :root {
+            --primary: #0078d4; /* Azure Blue */
+            --dark: #24292e;
+            --light: #f6f8fa;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 2rem 1rem; text-align: center; border-bottom: 4px solid var(--primary); }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 3px solid var(--primary); }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        .badge { background: #e1f0ff; color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
+        .status { display: inline-block; width: 10px; height: 10px; background: #28a745; border-radius: 50%; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Project 3: Cloud Infrastructure Team</h1>
+    <p>Automated Static Site Deployment via Azure CLI & GitHub Actions</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2><span class="status"></span> Live Deployment Status</h2>
+        <p>This site was provisioned using a Bash script and is automatically updated via <strong>GitHub Actions</strong> every time code is pushed to the repository.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <span class="badge">Lead Architect</span>
+            <h3>Ajadi</h3>
+            <p>Responsible for Azure CLI provisioning scripts and Resource Group management.</p>
+        </div>
+
+        <div class="card">
+            <span class="badge">CI/CD Specialist</span>
+            <h3>Jamiu</h3>
+            <p>Managed GitHub Actions workflows and secret integration for secure deployments.</p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Frontend Dev</span>
+            <h3>Olalekan</h3>
+            <p>Developed the unique static site template and optimized assets for Blob Storage.</p>
+        </div>
+    </div>
+
+    <section style="margin-top: 3rem; background: #fff; padding: 1.5rem; border-radius: 8px;">
+        <h3>Technical Stack</h3>
+        <ul>
+            <li><strong>Hosting:</strong> Azure Blob Storage ($web container)</li>
+            <li><strong>Automation:</strong> GitHub Actions (YAML)</li>
+            <li><strong>Infrastructure:</strong> Azure CLI (Bash)</li>
+            <li><strong>Source Control:</strong> Git/GitHub</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    &copy;2026 TechCrush Cloud Computing Cohort 5 | Deployed by Jamiu Ajadi with ❤️ on Azure
+</footer>
+
+</body>
+</html>
