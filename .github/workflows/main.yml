@@ -22,7 +22,7 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch \
-              --account-name <jamiustaticwebsitestore> \
+              --account-name jamiustaticwebsitestore \
               --source ./src \
               --destination '$web' \
               --overwrite
