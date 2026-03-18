@@ -1,9 +1,9 @@
 # devops-team-portfolio
 TechCrush - Static Website Project
 
-# Title -TechCrush | Cloud Computing Team
+# TechCrush | Cloud Computing Team
 
-# Project 1: Azure Static Website Deployment (Personal Project)
+# Project: Azure Static Website Deployment (Personal Project)
 
 ## Objective
 To deploy a unique, automated static website to Azure Blob Storage using the Azure CLI and GitHub Actions for CI/CD.
