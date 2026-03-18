@@ -17,7 +17,7 @@ To deploy a unique, automated static website to Azure Blob Storage using the Azu
 
 ### 1. Prerequisites
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) installed.
-- A GitHub repository with your `AZURE_CREDENTIALS` added as a Secret.
+- A GitHub repository with my `AZURE_CREDENTIALS` added as a Secret.
 
 ### 2. Manual Provisioning (Bash)
 To set up the infrastructure for the first time, run the deployment script:
