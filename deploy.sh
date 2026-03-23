@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Variables - Change these to ensure uniqueness
+# Variables 
 RESOURCE_GROUP="jamiu_project_rg"
 LOCATION="canadacentral"
-STORAGE_ACCOUNT="jamiustaticwebsitestore" # Ensures a unique name
+STORAGE_ACCOUNT="jamiustaticwebsitestore" 
 INDEX_DOC="index.html"
 
 echo "Creating Resource Group..."

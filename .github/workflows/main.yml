@@ -1,4 +1,4 @@
-name: Deploy Static Website to Azure
+name: End-to-End Azure Static Site Deployment
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-provision-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -17,12 +17,30 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Upload to Blob Storage
+      - name: Build, Provision and Deploy
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch \
-              --account-name jamiustaticwebsitestore \
-              --source ./src \
-              --destination '$web' \
-              --overwrite
+            # 1. Variables
+            RG="jamiu_project_rg"
+            LOC="canadacentral"
+            STORAGE="jamiustaticwebsitestore"
+
+            echo "Checking/Creating Resource Group..."
+            az group create --name $RG --location $LOC
+
+            echo "Checking/Creating Storage Account..."
+            # Using --status to check if it exists, otherwise create
+            az storage account create --name $STORAGE --resource-group $RG --location $LOC --sku Standard_LRS --kind StorageV2
+
+            echo "Enabling Static Website..."
+            az storage blob service-properties update --account-name $STORAGE --static-website --404-document error.html --index-document index.html
+
+            echo "Uploading Files..."
+            az storage blob upload-batch --account-name $STORAGE --source ./src --destination '$web' --overwrite
+
+            echo "----------------------------------------------------"
+            echo "DEPLOYMENT SUCCESSFUL!"
+            echo "YOUR SITE ENDPOINT IS:"
+            az storage account show --name $STORAGE --resource-group $RG --query "primaryEndpoints.web" --output tsv
+            echo "----------------------------------------------------"
