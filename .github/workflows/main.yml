@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-provision-and-deploy:
+  provision-build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -17,7 +17,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Build, Provision and Deploy
+      - name: Provision, Build and Deploy
         uses: azure/CLI@v1
         with:
           inlineScript: |
